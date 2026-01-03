@@ -1,16 +1,76 @@
-# React + Vite
+# Frontend E-Commerce Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully responsive frontend e-commerce application built with React and Vite, styled using React Bootstrap, and integrated with the DummyJSON API.
+This project demonstrates real-world frontend development skills, including authentication workflows, API integration, full CRUD operations, and dashboard design.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## React Compiler
+The application simulates a complete e-commerce system where users can authenticate, browse products, manage carts, and view users through a structured and intuitive dashboard interface.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## Key Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Secure authentication (Login & Register)
+- Persistent authentication using localStorage
+- Product browsing with search, filtering, sorting, and pagination
+- Product details view
+- Full CRUD operations for products
+- Cart management with totals and item details
+- User management with search and pagination
+- Centralized dashboard for managing all resources
+- Fully responsive layout across all devices
+
+
+## Technology Stack
+
+- React
+- Vite
+- React Bootstrap
+- React Router
+- Axios
+- DummyJSON API
+
+
+## Usage
+
+After running the development server (npm run dev), open the app in your browser. Register or log in to access the dashboard. Navigate to the Products tab to browse, search, filter, and manage items. Use the Cart section to add/remove products and view totals. The User Management tab allows searching and paginating through users. All data is fetched from the DummyJSON API for simulation purposes.
+
+
+## Installation & Setup
+
+- Clone the repository:
+git clone https://github.com/MahaSalehh/E-Commerce-React.git
+
+- Navigate to the project folder:
+cd E-Commerce-React
+
+- Install dependencies:
+npm install
+
+- Run the development server:
+npm run dev
+
+- Build for production:
+npm run build
+
+
+## Troubleshooting:
+
+If you encounter issues, ensure Node.js (version 16 or higher) is installed. Check for any port conflicts on the default Vite port (5173).
+
+
+## Live Demo
+
+https://e-commerce-react-xi-rouge.vercel.app/
+
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+
+## Notes
+
+This is a frontend-only project using DummyJSON as a mock backend.
+Some API behaviors (such as user registration) are simulated by the API.
