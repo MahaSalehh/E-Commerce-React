@@ -148,6 +148,19 @@ const Users = () => {
             {users.map((user) => (
               <Col key={user.id} xs={12} sm={6} md={4} lg={3}>
                 <Card className="h-100 border-0 shadow-sm hover-lift text-center">
+                  <div className="mt-auto p-3 d-flex justify-content-first">
+                      <Badge
+                        bg={user.gender === "male" ? "secondary" : "danger"}
+                        className="mb-2"
+                        style={{
+                          padding: "0.25rem 0.4rem",
+                          fontSize: "0.75rem",
+                          lineHeight: "1",
+                        }}
+                      >
+                        {user.gender}
+                      </Badge>
+                    </div>
                   <Card.Img
                     variant="top"
                     src={user.image}
@@ -162,23 +175,12 @@ const Users = () => {
                     <Card.Title className="h6 fw-semibold">
                       {user.firstName} {user.lastName}
                     </Card.Title>
-                    <div className="mt-auto justify-content-between align-items-center mb-2">
-                      <Badge
-                        bg={user.gender === "male" ? "secondary" : "danger"}
-                        className="mb-2"
-                        style={{
-                          padding: "0.25rem 0.4rem",
-                          fontSize: "0.75rem",
-                          lineHeight: "1",
-                        }}
-                      >
-                        {user.gender}
-                      </Badge>
-                    </div>
+                    
                     <p className="text-muted small mb-3">{user.email}</p>
                     <div className="d-flex gap-2 mt-auto justify-content-center">
                       <Button
                         variant="primary"
+                        className="flex-fill"
                         size="sm"
                         onClick={() => handleViewUser(user)}
                       >
@@ -186,6 +188,7 @@ const Users = () => {
                       </Button>
                       <Button
                         variant="outline-danger"
+                        className="flex-fill"
                         size="sm"
                         onClick={() => handleDeleteUser(user.id)}
                       >
