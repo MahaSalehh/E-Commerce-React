@@ -24,13 +24,13 @@ const Users = () => {
   const [showDetailModal, setShowDetailModal] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
   const [alert, setAlert] = useState({ show: false, message: "", variant: "" });
-    const [usersPerPage, setUsersPerPage] = useState(12);
+    const [usersPerPage, setUsersPerPage] = useState(24);
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 576) {
-        setUsersPerPage(6);
-      } else {
         setUsersPerPage(12);
+      } else {
+        setUsersPerPage(24);
       }
       setCurrentPage(1);
     };
@@ -146,7 +146,7 @@ const Users = () => {
         <>
           <Row className="g-4">
             {users.map((user) => (
-              <Col key={user.id} xs={12} sm={6} md={4} lg={3}>
+              <Col key={user.id} lg={3} md={4} sm={6} xs={6}>
                 <Card className="h-100 border-0 shadow-sm hover-lift text-center">
                   <div className="mt-auto p-3 d-flex justify-content-first">
                       <Badge

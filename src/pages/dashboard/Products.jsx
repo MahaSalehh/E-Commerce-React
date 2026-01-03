@@ -37,21 +37,21 @@ function Products() {
     stock: "",
   });
 
-  const [showDetailModal, setShowDetailModal] = useState(false);  
+  const [showDetailModal, setShowDetailModal] = useState(false);
   const [productsPerPage, setProductsPerPage] = useState(12);
-    useEffect(() => {
-      const handleResize = () => {
-        if (window.innerWidth <= 576) {
-          setProductsPerPage(6);
-        } else {
-          setProductsPerPage(12);
-        }
-        setCurrentPage(1);
-      };
-      handleResize();
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 576) {
+        setProductsPerPage(6);
+      } else {
+        setProductsPerPage(12);
+      }
+      setCurrentPage(1);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   useEffect(() => {
     fetchCategories();
   }, []);
@@ -250,8 +250,11 @@ function Products() {
         <>
           <Row className="g-4">
             {products.map((product) => (
-              <Col key={product.id} xs={12} sm={6} lg={4} xl={3}>
+              <Col key={product.id} lg={3} md={4} sm={6}>
                 <Card className="h-100 border-0 shadow-sm">
+                  <Badge bg="warning" text="dark" className="me-auto m-2 d-flex justify-content-first">
+                    ⭐ {product.rating}
+                  </Badge>
                   <Card.Img
                     src={product.thumbnail}
                     style={{ height: "200px", objectFit: "cover" }}
@@ -275,9 +278,6 @@ function Products() {
                       >
                         ${product.price}
                       </h5>
-                      <Badge bg="warning" text="dark">
-                        ⭐ {product.rating}
-                      </Badge>
                     </div>
                     <div className="d-flex gap-2">
                       <Button

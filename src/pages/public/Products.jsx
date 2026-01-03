@@ -178,6 +178,9 @@ const Products = () => {
             {products.map((product) => (
               <Col key={product.id} lg={3} md={4} sm={6} xs={6}>
                 <Card className="h-100 shadow-sm position-relative">
+                  <Badge bg="warning" text="dark" className="me-auto m-2 d-flex justify-content-first">
+                        ⭐ {product.rating}
+                      </Badge>
                   <Card.Img src={product.thumbnail} height={200} />
 
                   <Card.Body>
